@@ -44,13 +44,48 @@
       "You're a smart cookie, {name}."
     ],
     "Humor": [
-     
-    ],
-    "Inspiration": [
-      
-    ],
-    "Friendship": [
-      
-    ]
+        "{name}, you're the reason this country has to put directions on shampoo.",
+        "With great power comes great electricity bills. Good luck, {name}!",
+        "{name}, remember, if at first you don't succeed, skydiving is not for you.",
+        "Age is just a number, {name}, and in your case it’s a high one.",
+        "Don’t give up on your dreams so soon, {name}. Sleep longer.",
+        "Always borrow money from a pessimist, {name}. They won't expect it back.",
+        "{name}, if life gives you melons, you might be dyslexic.",
+        "I am on a seafood diet. Every time I see food, I eat it. Join me, {name}?",
+        "I told {name} to play dead in the road. You know they’re bad at acting when the vultures don’t even land.",
+        "{name}, you're proof that even Google doesn’t have all the answers.",
+        "I’m multitasking: I can listen, ignore and forget at the same time. What’s your talent, {name}?",
+        "{name}, if you think nobody cares if you’re alive, try missing a couple of car payments.",
+        "Mirrors can’t talk, and luckily for you, {name}, they can’t laugh either.",
+        "{name}, your secrets are always safe with me. I never even listen when you tell me them.",
+        "I’m not saying I hate you, {name}, but I would unplug your life support to charge my phone.",
+        "{name}, remember: If you can’t convince them, confuse them.",
+        "Life is short, {name}. Smile while you still have teeth.",
+        "{name}, you're like a cloud. When you disappear, it’s a beautiful day.",
+        "Don’t worry, {name}, the first 40 years of childhood are always the hardest.",
+        "I’m not lazy, {name}, I’m just on my energy-saving mode."
+      ],
+      "Inspiration": [
+        "{name}, believe you can and you’re halfway there.",
+        "The only time you should ever look back, {name}, is to see how far you’ve come.",
+        "Don’t watch the clock; do what it does, {name}. Keep going.",
+        "Stay positive, work hard, make it happen, {name}.",
+        "You are never too old to set another goal or to dream a new dream, {name}.",
+        "Your limitation—it’s only your imagination, {name}. Push the boundaries.",
+        "Push yourself, {name}, because no one else is going to do it for you.",
+        "Sometimes later becomes never, {name}. Do it now."
+      ],
+      "Friendship": [
+        "{name}, true friends are never apart, maybe in distance but never in heart.",
+        "Friendship isn't about who you've known the longest, {name}. It's about who walked into your life, said 'I'm here for you,' and proved it.",
+        "Friends are the family you choose, {name}.",
+        "A real friend is one who walks in when the rest of the world walks out, {name}.",
+        "A single rose can be my garden; a single friend, my world, {name}.",
+        "Good friends are like stars, {name}. You don't always see them, but you know they're always there.",
+        "A friend is someone who understands your past, believes in your future, and accepts you just the way you are, {name}.",
+        "Friends are the siblings God never gave us, {name}.",
+        "Friendship is the only cement that will ever hold the world together, {name}.",
+        "It's not what we have in life, but who we have in our life that matters, {name}."
+      ]
   }
   

@@ -1,11 +1,33 @@
-import React, { useState, useRef } from 'react';
-import { Button, Container, TextField, Typography, Select, MenuItem } from '@mui/material';
+import React, { useState, useRef, useEffect } from 'react';
+import { Button, Container, TextField, Typography, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
 import sayings from './sayings.json';
+import Cookies from 'js-cookie';
+
+const categories = Object.keys(sayings)
+
+const randomCategory = () => {
+  const randomIndex = Math.floor(Math.random() * categories.length);
+  const rtnval = categories[randomIndex];
+  return rtnval
+}
 
 function App() {
   const [saying, setSaying] = useState(null);
   const [name, setName] = useState('');
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState('random');
+
+  useEffect(() => {
+    // Retrieve the name from cookie at component mount
+    const savedName = Cookies.get('name');
+    if (savedName) {
+      setName(savedName);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save the name to a cookie whenever it changes
+    Cookies.set('name', name, { expires: 7 }); // Expires in 7 days
+  }, [name]);
 
   const updateSaying = (e) => {
 
@@ -33,13 +55,18 @@ function App() {
       <Typography variant="h2" component="h1" gutterBottom>
         Flirtinator
       </Typography>
-      <Select defaultValue="" fullWidth onChange={(e) => setCategory(e.target.value)}>
-        {Object.keys(sayings).map((key) => (
-          <MenuItem key={key} value={key}>{key}</MenuItem>
-        ))}
+      <FormControl fullWidth>
+        <InputLabel id="category-label">Category</InputLabel>
+        <Select labelId="category-label" value={category} defaultValue="" fullWidth onChange={(e) => setCategory(e.target.value)}>
+          <MenuItem value="random">Suprise Me!</MenuItem>
+          {categories.map((key) => (
 
-      </Select>
-      <TextField fullWidth label="Enter Name" margin="normal" onChange={(e) => setName(e.target.value)} />
+            <MenuItem key={key} value={key}>{key}</MenuItem>
+          ))}
+
+        </Select>
+      </FormControl>
+      <TextField fullWidth value={name} label="Enter Name" margin="normal" onChange={(e) => setName(e.target.value)} />
       <Button variant="contained" color="primary" onClick={updateSaying}>
         Generate Image
       </Button>
