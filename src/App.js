@@ -109,14 +109,14 @@ function App() {
             fontSize: 'calc(10px + 2vmin)',
             textAlign: 'center'
           }}>
-            <img src="/gold-star-border-clipart-gold-border-md.png" alt="Decorative Border" style={{
+            <img src="./gold-star-border-clipart-gold-border-md.png" alt="Decorative Border" style={{
               position: 'absolute',
               top: '10px', // Adjust based on your specific needs
               left: '10px', // Adjust based on your specific needs
               width: '100px', // Set your desired size
               height: '100px' // Set your desired size
             }} />
-            <img src="/gold-star-border-clipart-gold-border-md.png" alt="Decorative Border" style={{
+            <img src="./gold-star-border-clipart-gold-border-md.png" alt="Decorative Border" style={{
               position: 'absolute',
               bottom: '10px', // Adjust based on your specific needs
               right: '10px', // Adjust based on your specific needs
