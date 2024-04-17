@@ -18,6 +18,7 @@ function App() {
   const [category, setCategory] = useState('random');
   const [imageUrl, setImageUrl] = useState('');
   const imageRef = useRef(null);
+  const [imageVisible, setImageVisible] = useState(false); 
 
   useEffect(() => {
     // Retrieve the name from cookie at component mount
@@ -52,6 +53,7 @@ function App() {
     const rtnval = randomSaying.replace('{name}', name);
     console.log(rtnval)
     setSaying(rtnval);
+    setImageVisible(false);
   };
 
   useEffect(() => {
@@ -60,6 +62,7 @@ function App() {
       toPng(imageRef.current, { cacheBust: true })
         .then((dataUrl) => {
           setImageUrl(dataUrl); // Set the image URL in state
+          setImageVisible(true);
         })
         .catch((err) => console.log('Error generating image:', err));
     }
@@ -87,10 +90,11 @@ function App() {
       </Button>
       <hr />
 
-      {imageUrl && <img src={imageUrl} alt="Generated Saying" style={{ width: '500px', height: '300px' }} />}
+      {imageUrl && imageVisible && <img src={imageUrl} alt="Generated Saying" style={{ width: '500px', height: '300px' }} />}
       {saying &&
         (<div>
           <div ref={imageRef} style={{
+            display: imageVisible ? 'none' : 'flex', // Hide this div once the image is generated
             position: 'relative',
             width: '500px',
             height: '300px',
