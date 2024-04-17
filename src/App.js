@@ -56,6 +56,25 @@ function App() {
     setImageVisible(false);
   };
 
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Flirtinator Creation',
+          text: 'Just thinking of you',
+          url: imageUrl  // This is the URL of the image you generated and want to share.
+        });
+        console.log('Content shared successfully');
+      } catch (error) {
+        console.error('Error sharing:', error);
+      }
+    } else {
+      // Fallback for browsers that do not support the Share API
+      alert('Sharing is not supported in your browser. Please try on a mobile device!');
+    }
+  };
+  
+
   useEffect(() => {
 
     if (imageRef.current) {
@@ -90,9 +109,13 @@ function App() {
       </Button>
       <hr />
 
-      {imageUrl && imageVisible && <img src={imageUrl} alt="Generated Saying" style={{ width: '500px', height: '300px' }} />}
+      {imageUrl && imageVisible && 
+      <div>
+        <Button onClick={handleShare}>Share</Button>
+      <img src={imageUrl} alt="Generated Saying" style={{ width: '500px', height: '300px' }} />
+      </div>}
       {saying &&
-        (<div>
+        (<div style={{display: imageVisible ? 'none' : 'flex'}}>
           <div ref={imageRef} style={{
             display: imageVisible ? 'none' : 'flex', // Hide this div once the image is generated
             position: 'relative',
