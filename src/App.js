@@ -33,11 +33,12 @@ function App() {
 
     // const name = nameRef.current.value;
     // const category = categoryRef.current.value;
-    const sayingsList = sayings[category];
-    console.log("category:" + category); // Check the value of category
+    const selectedCategory = category === "random" ? randomCategory() : category;
+    const sayingsList = sayings[selectedCategory];
+    console.log("category:" + selectedCategory); // Check the value of category
     console.log("name:" + name); // Log the whole sayings object to see its structure
     console.log(sayings)
-    console.log(sayings[category]); // Check what this evaluates to
+    console.log(sayings[selectedCategory]); // Check what this evaluates to
 
     if (!sayingsList) {
       console.log("Please select a valid category")
