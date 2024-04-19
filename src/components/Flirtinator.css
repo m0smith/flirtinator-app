@@ -1,3 +1,31 @@
+.imageContainer {
+    display: flex;
+    flex-direction: 'column';
+    justify-content: 'center';
+    align-items: 'center';
+    /* border: '1px solid #ccc'; */
+    /* background-color: '#fff';
+    color: '#000'; */
+    /* fontFamily: '"Arial", sans-serif';
+    fontSize: '20px';
+    textAlign: 'center'; */
+}
+
+@media (min-width: 600px) {
+    .imageContainer,.flirty-mainBackground  {
+        width: 400px; /* Width for larger screens */
+        height: 500px; /* Maintain 4:5 aspect ratio */
+    }
+}
+
+@media (max-width: 599px) {
+    .imageContainer, .flirty-mainBackground  {
+        width: 200px; /* Smaller width for smaller screens */
+        height: 250px; /* Maintain 4:5 aspect ratio */
+    }
+}
+
+
 /* Original Styles */
 .original-mainBackground {
     background-color: #FFFFFF;
@@ -46,10 +74,8 @@
     align-items: center;
 
 
-    position: 'relative';
-    width: '500px';
-    max-width: '500px';
-    height: '300px';
+    /* position: 'relative'; */
+
 
    
 }

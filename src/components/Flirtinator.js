@@ -130,11 +130,11 @@ function Flirtinator() {
       {imageUrl && imageVisible &&
         <div>
 
-          <img src={imageUrl} alt="Generated Saying" style={{ width: '500px', height: '300px' }} />
+          <img src={imageUrl} alt="Generated Saying"  />
         </div>}
       {saying &&
-        (<div style={{ display: imageVisible ? 'none' : 'flex' }}>
-          <div ref={imageRef} style={{display: imageVisible ? 'none' : 'flex'}} className={isFlirty ? 'flirty-mainBackground' : 'original-mainBackground'}>
+        (<div   style={{display: imageVisible ? 'none' : 'flex'}} className={`imageContainer {isFlirty ? 'flirty-mainBackground' : 'original-mainBackground'}`}>
+          <div  ref={imageRef} style={{display: imageVisible ? 'none' : 'flex'}} className={isFlirty ? 'flirty-mainBackground' : 'original-mainBackground'}>
             <img src={`${process.env.PUBLIC_URL}/gold-star-border-clipart-gold-border-md.png`} alt="Decorative Border" style={{
               position: 'absolute',
               top: '10px', // Adjust based on your specific needs

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, List, ListItem, ListItemText, CssBaseline, Box, Typography, Toolbar, AppBar } from '@mui/material';
+import { Drawer, List, ListItem, ListItemText, ListItemButton, CssBaseline, Box, Typography, Toolbar, AppBar } from '@mui/material';
 
 function PersistentSidebar({ children }) {
   const drawerWidth = 240;  // You can adjust the width of the drawer here
@@ -26,9 +26,9 @@ function PersistentSidebar({ children }) {
         <Toolbar /> {/* This Toolbar component adds padding at the top equal to the AppBar's height */}
         <Box sx={{ overflow: 'auto' }}>
           <List>
-            <ListItem button component="a" href="http://ferociousflirting.com" target="_blank" rel="noopener noreferrer">
+            <ListItemButton component="a" href="https://www.ferociousflirting.com/" target="_blank" rel="noopener noreferrer">
               <ListItemText primary="Visit Ferocious Flirting" />
-            </ListItem>
+            </ListItemButton>
             <ListItem button component="a" href="https://amzn.to/3W6HycK" target="_blank" rel="noopener noreferrer">
               <ListItemText primary="Buy the Book on Amazon" />
             </ListItem>
