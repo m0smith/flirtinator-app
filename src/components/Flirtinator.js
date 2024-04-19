@@ -175,7 +175,7 @@ function Flirtinator() {
               fontSize: '16px',
               zIndex: 2  // Make sure it's above the background but below the text if needed
             }}>
-              www.flirtinator.com
+              flirtinator.com
             </div>
           </div>
 
