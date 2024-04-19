@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/flirtinator-app/static/css/main.e6c13ad2.css",
-    "main.js": "/flirtinator-app/static/js/main.76422a3b.js",
+    "main.js": "/flirtinator-app/static/js/main.eafdc79a.js",
     "static/js/453.78ec3095.chunk.js": "/flirtinator-app/static/js/453.78ec3095.chunk.js",
     "index.html": "/flirtinator-app/index.html",
     "main.e6c13ad2.css.map": "/flirtinator-app/static/css/main.e6c13ad2.css.map",
-    "main.76422a3b.js.map": "/flirtinator-app/static/js/main.76422a3b.js.map",
+    "main.eafdc79a.js.map": "/flirtinator-app/static/js/main.eafdc79a.js.map",
     "453.78ec3095.chunk.js.map": "/flirtinator-app/static/js/453.78ec3095.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.76422a3b.js"
+    "static/js/main.eafdc79a.js"
   ]
 }
