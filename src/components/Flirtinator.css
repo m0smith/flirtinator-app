@@ -1,0 +1,73 @@
+/* Original Styles */
+.original-mainBackground {
+    background-color: #FFFFFF;
+    /* White background */
+    color: #000000;
+    /* Black text */
+    border: 15px solid #FFD700;
+    /* Gold border */
+    font-family: 'Playfair Display', serif;
+    font-size: calc(10px + 2vmin);
+    text-align: center;
+    width: 1024px;
+    height: 1024px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.original-footer {
+    margin-top: auto;
+    padding: 10px;
+    background-color: #333333;
+    /* Dark footer */
+    color: #FFFFFF;
+    /* White text */
+    width: 100%;
+    text-align: center;
+}
+
+/* New Flirty Styles */
+.flirty-mainBackground {
+    background-color: #FED4C4;
+    /* Soft Peach */
+    color: #C71585;
+    /* Deep Rose text */
+    border: 3px double #FFD700;
+    /* Gold border */
+    font-family: 'Playfair Display', serif;
+    font-size: calc(10px + 2vmin);
+    text-align: center;
+
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    position: 'relative';
+    width: '500px';
+    max-width: '500px';
+    height: '300px';
+
+   
+}
+
+.flirty-footer {
+    background-color: #FED4C4;
+    /* Soft Peach */
+
+    color: #C71585;
+    /* Deep Rose text */
+
+    margin-top: auto; /* Pushes the footer to the bottom of the flex container */
+    width: 100%; /* Ensures the footer spans the full width of the container */
+    text-align: left; /* Aligns text to the left */
+    padding: 10px; /* Adds padding inside the footer */
+    width: 100%;
+    font-family: "Arial, sans-serif";
+    font-size: 16px;
+    
+   
+}

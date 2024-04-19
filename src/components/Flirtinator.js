@@ -4,6 +4,7 @@ import sayings from '../sayings.json';
 import Cookies from 'js-cookie';
 import { toPng } from 'html-to-image';
 import MoreFlirting from "./MoreFlirting"
+import './Flirtinator.css'
 
 const categories = Object.keys(sayings)
 
@@ -20,6 +21,7 @@ function Flirtinator() {
   const [imageUrl, setImageUrl] = useState('');
   const imageRef = useRef(null);
   const [imageVisible, setImageVisible] = useState(false);
+  const [isFlirty, setIsFlirty] = useState(true);
 
   useEffect(() => {
     // Retrieve the name from cookie at component mount
@@ -105,7 +107,7 @@ function Flirtinator() {
           no matter the miles between you.
         </Typography>
         <Typography>
-          <MoreFlirting/>
+          <MoreFlirting />
         </Typography>
       </Paper>
       <FormControl fullWidth>
@@ -127,27 +129,12 @@ function Flirtinator() {
 
       {imageUrl && imageVisible &&
         <div>
-         
+
           <img src={imageUrl} alt="Generated Saying" style={{ width: '500px', height: '300px' }} />
         </div>}
       {saying &&
         (<div style={{ display: imageVisible ? 'none' : 'flex' }}>
-          <div ref={imageRef} style={{
-            display: imageVisible ? 'none' : 'flex', // Hide this div once the image is generated
-            position: 'relative',
-            width: '500px',
-            height: '300px',
-
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            background: '#1a1a1a',
-            color: 'gold',
-            border: '10px solid gold',
-            fontFamily: '"Playfair Display", serif',
-            fontSize: 'calc(10px + 2vmin)',
-            textAlign: 'center'
-          }}>
+          <div ref={imageRef} style={{display: imageVisible ? 'none' : 'flex'}} className={isFlirty ? 'flirty-mainBackground' : 'original-mainBackground'}>
             <img src={`${process.env.PUBLIC_URL}/gold-star-border-clipart-gold-border-md.png`} alt="Decorative Border" style={{
               position: 'absolute',
               top: '10px', // Adjust based on your specific needs
@@ -166,15 +153,7 @@ function Flirtinator() {
             <p style={{ margin: '40px', zIndex: 1 }}> {/* Ensure text is above the images */}
               {saying}
             </p>
-            <div style={{
-              position: 'absolute',
-              bottom: '10px',
-              left: '10px',
-              color: 'gold',
-              fontFamily: 'Arial, sans-serif',
-              fontSize: '16px',
-              zIndex: 2  // Make sure it's above the background but below the text if needed
-            }}>
+            <div className={isFlirty ? 'flirty-footer' : 'original-footer'}>
               flirtinator.com
             </div>
           </div>
