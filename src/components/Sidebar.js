@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Drawer, List, ListItem, ListItemText, IconButton, CssBaseline } from '@mui/material';
+import { Drawer, List, ListItem, ListItemText,ListItemButton, IconButton, CssBaseline } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 function Sidebar() {
@@ -22,11 +22,11 @@ function Sidebar() {
       <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)}>
         <div role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
           <List>
-            <ListItem button component="a" href="http://ferocioousflirting.com" target="_blank" rel="noopener noreferrer">
-              <ListItemText primary="Visit Ferocious Flirting" />
+            <ListItem component="a" href="https://www.ferociousflirting.com/" target="_blank" rel="noopener noreferrer">
+              <ListItemButton primary="Visit Ferocious Flirting" />
             </ListItem>
-            <ListItem button component="a" href="https://amzn.to/3W6HycK" target="_blank" rel="noopener noreferrer">
-              <ListItemText primary="Buy the Book on Amazon" />
+            <ListItem component="a" href="https://amzn.to/3W6HycK" target="_blank" rel="noopener noreferrer">
+              <ListItemButton primary="Buy the Book on Amazon" />
             </ListItem>
           </List>
         </div>
