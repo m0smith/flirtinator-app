@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/flirtinator-app/static/css/main.3cabea6f.css",
-    "main.js": "/flirtinator-app/static/js/main.d33a9679.js",
-    "static/js/453.78ec3095.chunk.js": "/flirtinator-app/static/js/453.78ec3095.chunk.js",
-    "index.html": "/flirtinator-app/index.html",
-    "main.3cabea6f.css.map": "/flirtinator-app/static/css/main.3cabea6f.css.map",
-    "main.d33a9679.js.map": "/flirtinator-app/static/js/main.d33a9679.js.map",
-    "453.78ec3095.chunk.js.map": "/flirtinator-app/static/js/453.78ec3095.chunk.js.map"
+    "main.css": "/static/css/main.3cabea6f.css",
+    "main.js": "/static/js/main.3cab54e5.js",
+    "static/js/453.78ec3095.chunk.js": "/static/js/453.78ec3095.chunk.js",
+    "index.html": "/index.html",
+    "main.3cabea6f.css.map": "/static/css/main.3cabea6f.css.map",
+    "main.3cab54e5.js.map": "/static/js/main.3cab54e5.js.map",
+    "453.78ec3095.chunk.js.map": "/static/js/453.78ec3095.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3cabea6f.css",
-    "static/js/main.d33a9679.js"
+    "static/js/main.3cab54e5.js"
   ]
 }
