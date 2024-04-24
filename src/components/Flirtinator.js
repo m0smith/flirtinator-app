@@ -22,6 +22,7 @@ function Flirtinator() {
   const imageRef = useRef(null);
   const [imageVisible, setImageVisible] = useState(false);
   const [isFlirty, setIsFlirty] = useState(true);
+  const [backgroundUrl, setBackgroundUrl] = useState('https://img.freepik.com/free-photo/natures-beauty-captured-colorful-flower-close-up-generative-ai_188544-8593.jpg');
 
   useEffect(() => {
     // Retrieve the name from cookie at component mount
@@ -133,7 +134,8 @@ function Flirtinator() {
           <img src={imageUrl} alt="Generated Saying"  />
         </div>}
       {saying &&
-        (<div className="flirty2-mainBackground">
+        (<div className="flirty2-mainBackground" 
+              style={{ backgroundImage: `url(${backgroundUrl})` }}>
         <p className="flirty2-text">{saying}</p>
         <div className="flirty2-footer">
             flirtinator.com
