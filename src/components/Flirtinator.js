@@ -1,44 +1,71 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Button, Container, TextField, Typography, Select, MenuItem, InputLabel, FormControl, Paper } from '@mui/material';
-import sayings from '../sayings.json';
-import fontStyles from '../fontStyles.json';
-import backgroundStyles from '../backgroundStyles.json';
-import Cookies from 'js-cookie';
-import { toPng } from 'html-to-image';
-import MoreFlirting from "./MoreFlirting"
-import './Flirtinator.css'
+import React, { useState, useRef, useEffect } from "react";
+import {
+  Button,
+  Container,
+  TextField,
+  Typography,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
+  Paper,
+} from "@mui/material";
+import sayings from "../sayings.json";
+import fontStyles from "../fontStyles.json";
+import backgroundStyles from "../backgroundStyles.json";
+import Cookies from "js-cookie";
+import { toPng } from "html-to-image";
+import MoreFlirting from "./MoreFlirting";
+import "./Flirtinator.css";
 
-const categories = Object.keys(sayings)
+const categories = Object.keys(sayings);
+
+const fonts = [
+  '"Playfair Display", serif',
+  '"Montserrat", sans-serif',
+  '"EB Garamond", serif',
+  '"Roboto", sans-serif'
+]
 
 const randomCategory = () => {
   const randomIndex = Math.floor(Math.random() * categories.length);
   const rtnval = categories[randomIndex];
-  return rtnval
-}
+  return rtnval;
+};
+const randomFont = () => {
+  const randomIndex = Math.floor(Math.random() * fonts.length);
+  const rtnval = fonts[randomIndex];
+  return rtnval;
+};
 const randomFontStyle = () => {
   const randomIndex = Math.floor(Math.random() * fontStyles.length);
   const rtnval = fontStyles[randomIndex];
-  return rtnval
-}
+  return rtnval;
+};
 const randomBackgroundStyle = () => {
   const randomIndex = Math.floor(Math.random() * backgroundStyles.length);
   const rtnval = backgroundStyles[randomIndex];
-  return rtnval
-}
+  return rtnval;
+};
 
 function Flirtinator() {
   const [saying, setSaying] = useState(null);
-  const [name, setName] = useState('');
-  const [category, setCategory] = useState('random');
-  const [imageUrl, setImageUrl] = useState('');
+  const [name, setName] = useState("");
+  const [category, setCategory] = useState("random");
+  const [imageUrl, setImageUrl] = useState("");
   const imageRef = useRef(null);
   const [imageVisible, setImageVisible] = useState(false);
 
-  const [backgroundUrl, setBackgroundUrl] = useState('https://img.freepik.com/free-photo/natures-beauty-captured-colorful-flower-close-up-generative-ai_188544-8593.jpg');
-
+  const [combinedStyle, setCombinedStyle] = useState(
+    "https://img.freepik.com/free-photo/natures-beauty-captured-colorful-flower-close-up-generative-ai_188544-8593.jpg"
+  );
+  const [textStyle, setTextStyle] = useState({
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    color: "#FFFFFF",
+  });
   useEffect(() => {
     // Retrieve the name from cookie at component mount
-    const savedName = Cookies.get('name');
+    const savedName = Cookies.get("name");
     if (savedName) {
       setName(savedName);
     }
@@ -46,30 +73,35 @@ function Flirtinator() {
 
   useEffect(() => {
     // Save the name to a cookie whenever it changes
-    Cookies.set('name', name, { expires: 7 }); // Expires in 7 days
+    Cookies.set("name", name, { expires: 7 }); // Expires in 7 days
   }, [name]);
 
   const updateSaying = () => {
-
     // const name = nameRef.current.value;
     // const category = categoryRef.current.value;
-    const selectedCategory = category === "random" ? randomCategory() : category;
+    const selectedCategory =
+      category === "random" ? randomCategory() : category;
     const fontStyle = randomFontStyle();
     const backgroundStyle = randomBackgroundStyle();
+    const combinedStyle = { ...fontStyle, ...backgroundStyle };
+    setCombinedStyle(combinedStyle);
+    setTextStyle(fontStyle);
+    console.log("fontStyle", fontStyle);
+    console.log("combinedStyle", combinedStyle);
     const sayingsList = sayings[selectedCategory];
     console.log("category:" + selectedCategory); // Check the value of category
     console.log("name:" + name); // Log the whole sayings object to see its structure
-    console.log(sayings)
+    console.log(sayings);
     console.log(sayings[selectedCategory]); // Check what this evaluates to
 
     if (!sayingsList) {
-      console.log("Please select a valid category")
-      return
+      console.log("Please select a valid category");
+      return;
     }
     const randomIndex = Math.floor(Math.random() * sayingsList.length);
     const randomSaying = sayingsList[randomIndex];
-    const rtnval = randomSaying.replace('{name}', name);
-    console.log(rtnval)
+    const rtnval = randomSaying.replace("{name}", name);
+    console.log(rtnval);
     setSaying(rtnval);
     setImageVisible(false);
   };
@@ -92,34 +124,42 @@ function Flirtinator() {
   //   }
   // };
 
-
   useEffect(() => {
-
+    
     if (imageRef.current) {
       toPng(imageRef.current, { cacheBust: true })
         .then((dataUrl) => {
           setImageUrl(dataUrl); // Set the image URL in state
           setImageVisible(true);
         })
-        .catch((err) => console.log('Error generating image:', err));
+        .catch((err) => console.log("Error generating image:", err));
     }
-  }, [saying])
-
+  }, [saying]);
+  console.log("imageVisilbe", imageVisible)
   return (
     <Container>
       <Typography variant="h2" component="h1" gutterBottom>
         Flirtinator
       </Typography>
-      <Paper style={{ padding: '20px', marginTop: '20px', marginBottom: '40px', backgroundColor: '#fce4ec', borderRadius: '15px' }}>
+      <Paper
+        style={{
+          padding: "20px",
+          marginTop: "20px",
+          marginBottom: "40px",
+          backgroundColor: "#fce4ec",
+          borderRadius: "15px",
+        }}
+      >
         <Typography variant="subtitle1" gutterBottom>
-          Welcome to Flirtinator, where every message is a chance to make someone's day!
-          In a world where distance often keeps us apart, a little flirt, a word of appreciation,
-          or a gesture of encouragement can bridge miles in a heartbeat.
-          Unexpected expressions of affection are not just about romance;
-          they remind us that we are cherished and thought of fondly.
-          Let Flirtinator help you send a sparkle across the digital divide and light up someone’s day.
-          It’s about letting those special people in your life know they’re in your heart and on your mind,
-          no matter the miles between you.
+          Welcome to Flirtinator, where every message is a chance to make
+          someone's day! In a world where distance often keeps us apart, a
+          little flirt, a word of appreciation, or a gesture of encouragement
+          can bridge miles in a heartbeat. Unexpected expressions of affection
+          are not just about romance; they remind us that we are cherished and
+          thought of fondly. Let Flirtinator help you send a sparkle across the
+          digital divide and light up someone’s day. It’s about letting those
+          special people in your life know they’re in your heart and on your
+          mind, no matter the miles between you.
         </Typography>
         <Typography>
           <MoreFlirting />
@@ -127,41 +167,51 @@ function Flirtinator() {
       </Paper>
       <FormControl fullWidth>
         <InputLabel id="category-label">Category</InputLabel>
-        <Select labelId="category-label" value={category} defaultValue="" fullWidth onChange={(e) => setCategory(e.target.value)}>
+        <Select
+          labelId="category-label"
+          value={category}
+          defaultValue=""
+          fullWidth
+          onChange={(e) => setCategory(e.target.value)}
+        >
           <MenuItem value="random">Suprise Me!</MenuItem>
           {categories.map((key) => (
-
-            <MenuItem key={key} value={key}>{key}</MenuItem>
+            <MenuItem key={key} value={key}>
+              {key}
+            </MenuItem>
           ))}
-
         </Select>
       </FormControl>
-      <TextField fullWidth value={name} label="Enter Name" margin="normal" onChange={(e) => setName(e.target.value)} />
+      <TextField
+        fullWidth
+        value={name}
+        label="Enter Name"
+        margin="normal"
+        onChange={(e) => setName(e.target.value)}
+      />
       <Button variant="contained" color="primary" onClick={updateSaying}>
         Generate Image
       </Button>
       <hr />
+          
 
-      {imageUrl && imageVisible &&
+{
+      imageUrl && imageVisible && (
         <div>
-
-          <img src={imageUrl} alt="Generated Saying"  />
-        </div>}
-      {saying &&
-        (<div className="flirty2-mainBackground" 
-              style={{ backgroundImage: `url(${backgroundUrl})` }}>
-        <p className="flirty2-text">{saying}</p>
-        <div className="flirty2-footer">
-            flirtinator.com
+          <img src={imageUrl} alt={`{saying} Generated by flirtinator.com`} />
         </div>
-    </div>
-    )}
-
-       
-
-
-
-    </Container >
+      )}
+      {!imageVisible && saying && (
+        <div ref={imageRef} className="flirty2-mainBackground" style={combinedStyle}>
+          <p className="flirty2-text" style={{...textStyle, "fontFamily": randomFont()}}>
+            {saying}
+          </p>
+          <div className="flirty2-footer" style={textStyle}>
+            flirtinator.com
+          </div>
+        </div>
+      )}
+    </Container>
   );
 }
 

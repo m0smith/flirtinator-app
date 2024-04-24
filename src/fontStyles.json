@@ -1,0 +1,17 @@
+[
+  {
+    "color": "#C71585",
+    "backgroundColor": "rgba(255, 255, 255, 0.5)"
+  },
+
+  { "backgroundColor": "rgba(0, 0, 0, 0.5)", "color": "#FFFFFF" },
+  { "backgroundColor": "rgba(255, 255, 255, 0.5)", "color": "#000000" },
+  { "backgroundColor": "rgba(26, 26, 26, 0.5)", "color": "#E6E6E6" },
+  { "backgroundColor": "rgba(0, 71, 171, 0.5)", "color": "#FFD700" },
+  { "backgroundColor": "rgba(255, 215, 0, 0.5)", "color": "#0047AB" },
+  { "backgroundColor": "rgba(75, 0, 130, 0.5)", "color": "#FFFF00" },
+  { "backgroundColor": "rgba(255, 69, 0, 0.5)", "color": "#FFFFFF" },
+  { "backgroundColor": "rgba(50, 205, 50, 0.5)", "color": "#FFFFFF" },
+  { "backgroundColor": "rgba(139, 69, 19, 0.5)", "color": "#FFF8DC" },
+  { "backgroundColor": "rgba(46, 139, 87, 0.5)", "color": "#FFFFFF" }
+]
