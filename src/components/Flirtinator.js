@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Button, Container, TextField, Typography, Select, MenuItem, InputLabel, FormControl, Paper } from '@mui/material';
 import sayings from '../sayings.json';
+import fontStyles from '../fontStyles.json';
+import backgroundStyles from '../backgroundStyles.json';
 import Cookies from 'js-cookie';
 import { toPng } from 'html-to-image';
 import MoreFlirting from "./MoreFlirting"
@@ -13,6 +15,16 @@ const randomCategory = () => {
   const rtnval = categories[randomIndex];
   return rtnval
 }
+const randomFontStyle = () => {
+  const randomIndex = Math.floor(Math.random() * fontStyles.length);
+  const rtnval = fontStyles[randomIndex];
+  return rtnval
+}
+const randomBackgroundStyle = () => {
+  const randomIndex = Math.floor(Math.random() * backgroundStyles.length);
+  const rtnval = backgroundStyles[randomIndex];
+  return rtnval
+}
 
 function Flirtinator() {
   const [saying, setSaying] = useState(null);
@@ -21,7 +33,7 @@ function Flirtinator() {
   const [imageUrl, setImageUrl] = useState('');
   const imageRef = useRef(null);
   const [imageVisible, setImageVisible] = useState(false);
-  const [isFlirty, setIsFlirty] = useState(true);
+
   const [backgroundUrl, setBackgroundUrl] = useState('https://img.freepik.com/free-photo/natures-beauty-captured-colorful-flower-close-up-generative-ai_188544-8593.jpg');
 
   useEffect(() => {
@@ -42,6 +54,8 @@ function Flirtinator() {
     // const name = nameRef.current.value;
     // const category = categoryRef.current.value;
     const selectedCategory = category === "random" ? randomCategory() : category;
+    const fontStyle = randomFontStyle();
+    const backgroundStyle = randomBackgroundStyle();
     const sayingsList = sayings[selectedCategory];
     console.log("category:" + selectedCategory); // Check the value of category
     console.log("name:" + name); // Log the whole sayings object to see its structure
