@@ -133,32 +133,16 @@ function Flirtinator() {
           <img src={imageUrl} alt="Generated Saying"  />
         </div>}
       {saying &&
-        (<div   style={{display: imageVisible ? 'none' : 'flex'}} className={`imageContainer {isFlirty ? 'flirty-mainBackground' : 'original-mainBackground'}`}>
-          <div  ref={imageRef} style={{display: imageVisible ? 'none' : 'flex'}} className={isFlirty ? 'flirty-mainBackground' : 'original-mainBackground'}>
-            <img src={`${process.env.PUBLIC_URL}/gold-star-border-clipart-gold-border-md.png`} alt="Decorative Border" style={{
-              position: 'absolute',
-              top: '10px', // Adjust based on your specific needs
-              left: '10px', // Adjust based on your specific needs
-              width: '100px', // Set your desired size
-              height: '100px' // Set your desired size
-            }} />
-            <img src={`${process.env.PUBLIC_URL}/gold-star-border-clipart-gold-border-md.png`} alt="Decorative Border" style={{
-              position: 'absolute',
-              bottom: '10px', // Adjust based on your specific needs
-              right: '10px', // Adjust based on your specific needs
-              width: '100px', // Set your desired size
-              height: '100px', // Set your desired size
-              transform: 'rotate(180deg)' // Rotate 180 degrees
-            }} />
-            <p style={{ margin: '40px', zIndex: 1 }}> {/* Ensure text is above the images */}
-              {saying}
-            </p>
-            <div className={isFlirty ? 'flirty-footer' : 'original-footer'}>
-              flirtinator.com
-            </div>
-          </div>
+        (<div className="flirty2-mainBackground">
+        <p className="flirty2-text">{saying}</p>
+        <div className="flirty2-footer">
+            flirtinator.com
+        </div>
+    </div>
+    )}
 
-        </div>)}
+       
+
 
 
     </Container >

@@ -97,3 +97,45 @@
     
    
 }
+
+/* New Flirty Styles with Background Image */
+.flirty2-mainBackground {
+    background-image: url('https://img.freepik.com/free-photo/natures-beauty-captured-colorful-flower-close-up-generative-ai_188544-8593.jpg');
+    background-position: center; /* Adjust this to focus on a specific part of the image */
+    background-size: cover; /* Covers the entire background; use 'contain' if you need to see the whole image */
+    background-repeat: no-repeat;
+    background-color: #FED4C4; /* Fallback color */
+    color: #C71585; /* Deep Rose text */
+    border: 3px double #FFD700; /* Gold border */
+    font-family: 'Playfair Display', serif;
+    font-size: calc(10px + 3vmin);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px; /* Set a fixed height or adjust as needed */
+    width: 400px; /* Set a fixed width or adjust as needed */
+    position: relative;
+}
+
+/* Text with readable background rectangle */
+.flirty2-text {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white for readability */
+    padding: 10px;
+    border-radius: 10px; /* Optional, for rounded corners */
+    width: calc(100% - 20px); /* Adjust width as needed, accounting for padding */
+}
+
+.flirty2-footer {
+    background-color: rgba(255, 255, 255, 0.5); /* Soft Peach */
+    color: #C71585; /* Deep Rose text */
+    padding: 10px;
+    width: 100%; /* Ensures the footer spans the full width of the container */
+    text-align: left; /* Aligns text to the left */
+    font-family: "Arial, sans-serif";
+    font-size: 16px;
+    position: absolute;
+    bottom: 0; /* Anchors the footer at the bottom */
+    left: 0; /* Anchors the footer at the left side */
+}
